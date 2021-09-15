@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="APP">
+        <header>
+            <h1 id="date"></h1>
+            <div id="dow"></div>
+            <div class="white_space"></div>
+            <div id="remains"></div>
+        </header>
+        <hr>
+        <section>
+            <ul id="todolist"></ul>
+        </section>
+            <input type="checkbox" id="add_button">
+
+            <div class="hidden_area" >
+                <div class="white_space"></div>
+                <input type="text" class="input_form" placeholder='할 일을 입력한 후 , Enter 키를 누르세요.' onkeyup="if(window.event.keyCode==13){submit(this)}"> 
+            </div>
+
+
+            <label for="add_button">
+                <div class="inner_circle">
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- https://www.freepik.com/ -->

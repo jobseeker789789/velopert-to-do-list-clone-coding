@@ -1,0 +1,244 @@
+@font-face {
+    font-family: 'S-CoreDream-8Heavy';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-7ExtraBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-6Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-5Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-4Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-2ExtraLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-2ExtraLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    display: flex;
+    align-items: center;;
+    justify-content: center;;
+    height: 100vh;
+    margin: 0;
+    background-color: #333;
+}
+#APP{
+    width: 480px;
+    height: 640px;
+    background-color: #fff;
+    /* border:6px solid #e6eaec; */
+    border-radius: 18px;
+    padding: 21px 0;
+    position: relative;
+    overflow: hidden;
+}
+#APP * {
+    transition: all .35s;
+}
+header{
+    padding: 12px 24px;
+}
+    header *{
+        margin: 0;
+    }
+    #date{
+        font-family: 'S-CoreDream-7ExtraBold';
+        font-weight: 700;
+        font-size: 30px;
+        color: #323a44;
+        letter-spacing: -1px;
+    }
+    .white_space{
+        height: 32px;
+    }
+    #dow{
+        color: #a3a7a9;
+        font-family: 'S-CoreDream-5Medium';
+        font-size: 0.1px;
+    }
+    #remains{
+        color: #3dcfa1;
+        font-family: 'S-CoreDream-6Bold';
+        font-size: 0.1px;
+    }
+hr{
+    height: 2px;
+    background-color: #eeeef4;
+    border: none;
+}   
+section{
+    padding: 6px 24px;
+}
+#todolist{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+    li{
+        width: 100%;
+        height: 30px;
+        line-height: 30px;
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        font-size: 18px;
+        font-family: 'S-CoreDream-5Medium';
+        margin: 12px 0;
+        overflow: hidden;
+    }
+    li:hover{
+        transform: scale(1.01);
+    }
+    li:hover .del{
+        opacity: 0.7;
+    }
+        .check_icon{
+            display: block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #3dcfa1;
+            border-radius: 60px;
+            margin-right: 24px;
+            text-align: center;
+            line-height: 24px;
+            transform: rotate(45deg) rotateY(180deg);
+            color: #fefefc;
+            font-family: 'S-CoreDream-5Medium';
+        }
+        li > label{
+            display: flex;
+            flex-direction: row;
+            width: 402px;
+            opacity: 0.8;
+        }
+        li > label:hover{
+            cursor: pointer;
+            opacity: 1;
+        }
+            li > label > input[type="checkbox"]:checked + .check_icon{
+                color: #3dcfa1;
+            }
+            li > label > input[type="checkbox"]:checked ~ * {
+                opacity: 0.5;
+            }
+        .del{
+            display: block;
+            width: 24px;
+            height: 24px;
+            margin: 3px;
+            background-image: url(recycle-bin.png);
+            opacity: 0;
+        }
+        .del:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+        
+.hidden_area{
+    box-shadow: 1px -3px 36px 1px rgba(0,0,0,0.61);
+    background-color: #fff;
+    position: absolute;
+    width: 480px;
+    height: 120px;
+    bottom: -120px;
+    transition: all .35s;
+    overflow: hidden;
+    border-radius: 18px;
+}
+#add_button:checked ~ .hidden_area{
+    bottom: 0px;
+}
+    .input_form{
+        display: block;
+        width: 360px;
+        height: 12px;
+        margin: 0 auto;
+        line-height: 12px;
+        font-size: 12px;
+        padding: 12px;
+        font-family: 'S-CoreDream-4Regular';
+        /* font-family: 'S-CoreDream-5Medium'; */
+        color: #28282a;
+    }
+input[type=checkbox]{
+    display: none;
+}
+label[for=add_button]{
+    display: flex;
+    position: fixed;
+    left: 50%;
+    top:50%;
+    width: 64px;
+    height: 64px;
+    background-color: #36daac;
+    border-radius: 60px;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%) translateY(309px);
+}
+    .inner_circle{
+        display: block;
+        width: 32px;
+        height: 32px;
+        position: relative;
+    }
+        label[for=add_button] span{
+            display: block;
+            width: 100%;
+            height: 5px;
+            border-radius: 30px;
+            background: #fff;
+            transition: all .35s;
+            position: absolute;
+
+        }
+        label[for=add_button] span:nth-child(1){
+            top : 50%;
+            transform:  translateY(-50%);
+        }
+        label[for=add_button] span:nth-child(2){
+            top : 50%;
+            transform: translateY(-50%) rotate(90deg);
+        }
+        #add_button:checked ~ label[for=add_button]{
+            background-color: #fe868c;
+        }
+        #add_button:checked ~ label[for=add_button] span:nth-child(1){
+            top : 50%;
+            transform:  translateY(-50%) rotate(225deg);
+        }
+        #add_button:checked ~ label[for=add_button] span:nth-child(2){
+            top : 50%;
+            transform: translateY(-50%) rotate(-45deg);
+        }
+        label[for=add_button]:hover{
+            cursor:pointer;
+        }
